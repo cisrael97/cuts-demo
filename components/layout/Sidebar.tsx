@@ -68,7 +68,7 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
             onClick={() => setTema('barberia')}
             className="py-1.5 rounded-lg text-[11px] font-semibold transition-all"
             style={tema === 'barberia'
-              ? { background: '#c9a84c', color: '#0e0c08' }
+              ? { background: '#b8a078', color: '#0e0c08' }
               : { color: 'rgba(255,255,255,0.5)' }
             }
           >
