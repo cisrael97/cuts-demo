@@ -7,6 +7,23 @@ import {
 } from 'lucide-react'
 import { useThemeStore } from '@/lib/store/useThemeStore'
 
+const FRASES = [
+  'El estilo es una forma de decir quién eres sin hablar.',
+  'Cada corte es una obra de arte.',
+  'La confianza empieza en el espejo.',
+  'Un buen día empieza con un buen look.',
+  'Transforma vidas, un cliente a la vez.',
+  'La belleza es el negocio de hacer sentir bien a las personas.',
+  'El detalle marca la diferencia.',
+  'Tu trabajo habla por ti — hazlo brillar.',
+  'Clientes felices son la mejor publicidad.',
+  'Hoy es un buen día para ser excelente.',
+  'La pasión se nota en cada tijera.',
+  'No hay nada más poderoso que un estilista inspirado.',
+]
+
+const frase = FRASES[Math.floor(Math.random() * FRASES.length)]
+
 const NAV = [
   { href: '/dashboard', label: 'Dashboard', Icon: LayoutDashboard },
   { href: '/citas', label: 'Citas', Icon: CalendarDays },
@@ -105,8 +122,15 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
         })}
       </nav>
 
+      {/* Frase motivadora */}
+      <div className="px-4 py-3 mx-3 mb-2 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)' }}>
+        <p className="text-[11px] italic leading-relaxed text-center" style={{ color: 'var(--sidebar-text)' }}>
+          "{frase}"
+        </p>
+      </div>
+
       {/* Footer */}
-      <div className="px-3 py-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+      <div className="px-3 py-3" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="flex items-center gap-3 px-3 py-2 mb-2">
           <div
             className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
