@@ -1,0 +1,16 @@
+import type { Cliente } from '@/lib/types'
+
+export const clientesMock: Cliente[] = [
+  { id: 'c1', nombre: 'Valentina Reyes Torres', telefono: '55 1234 5678', email: 'valentina.reyes@email.com', fechaNacimiento: '1992-03-14', puntosFidelidad: 850, totalVisitas: 24, ultimaVisita: '2026-03-28', notasInternas: 'Prefiere tinte sin amoniaco. Alérgica a ciertos productos.', etiquetas: ['VIP', 'Regular'] },
+  { id: 'c2', nombre: 'Carlos Mendoza Ruiz', telefono: '55 2345 6789', email: 'cmendoza@gmail.com', fechaNacimiento: '1988-07-22', puntosFidelidad: 320, totalVisitas: 12, ultimaVisita: '2026-04-01', notasInternas: 'Le gusta el corte fade bajo.', etiquetas: ['Regular'] },
+  { id: 'c3', nombre: 'Sofía Ramírez Luna', telefono: '55 3456 7890', email: 'sofia.ramirez@hotmail.com', fechaNacimiento: '1995-11-08', puntosFidelidad: 1200, totalVisitas: 36, ultimaVisita: '2026-04-03', notasInternas: 'Cliente VIP. Siempre agenda con Mariana.', etiquetas: ['VIP'] },
+  { id: 'c4', nombre: 'Diego Hernández Castro', telefono: '55 4567 8901', email: 'diego.h@email.com', fechaNacimiento: '1990-05-30', puntosFidelidad: 150, totalVisitas: 5, ultimaVisita: '2026-02-14', notasInternas: '', etiquetas: ['Nuevo'] },
+  { id: 'c5', nombre: 'Lucía Martínez Vega', telefono: '55 5678 9012', email: 'lucia.mv@gmail.com', fechaNacimiento: '1998-01-17', puntosFidelidad: 540, totalVisitas: 18, ultimaVisita: '2026-03-20', notasInternas: 'Prefiere citas por la mañana.', etiquetas: ['Regular'] },
+  { id: 'c6', nombre: 'Roberto García Soto', telefono: '55 6789 0123', email: 'rgarcia@empresa.com', fechaNacimiento: '1985-09-03', puntosFidelidad: 90, totalVisitas: 3, ultimaVisita: '2026-01-10', notasInternas: '', etiquetas: ['Inactivo'] },
+  { id: 'c7', nombre: 'Ana Paula Jiménez', telefono: '55 7890 1234', email: 'anapj@email.com', fechaNacimiento: '2000-12-25', puntosFidelidad: 680, totalVisitas: 21, ultimaVisita: '2026-04-04', notasInternas: 'Le encanta el balayage.', etiquetas: ['VIP', 'Regular'] },
+  { id: 'c8', nombre: 'Fernando López Díaz', telefono: '55 8901 2345', email: 'flopez@gmail.com', fechaNacimiento: '1993-06-11', puntosFidelidad: 200, totalVisitas: 7, ultimaVisita: '2026-03-15', notasInternas: '', etiquetas: ['Regular'] },
+  { id: 'c9', nombre: 'Isabella Cruz Mora', telefono: '55 9012 3456', email: 'isa.cruz@email.com', fechaNacimiento: '1997-04-09', puntosFidelidad: 950, totalVisitas: 30, ultimaVisita: '2026-04-02', notasInternas: 'Cliente frecuente de uñas de gel.', etiquetas: ['VIP'] },
+  { id: 'c10', nombre: 'Miguel Ángel Torres', telefono: '55 0123 4567', email: 'miguel.torres@hotmail.com', fechaNacimiento: '1991-08-19', puntosFidelidad: 75, totalVisitas: 2, ultimaVisita: '2026-03-05', notasInternas: '', etiquetas: ['Nuevo'] },
+  { id: 'c11', nombre: 'Gabriela Sánchez Ortiz', telefono: '55 1357 2468', email: 'gabis@email.com', fechaNacimiento: '1989-02-28', puntosFidelidad: 410, totalVisitas: 14, ultimaVisita: '2026-03-30', notasInternas: 'Prefiere horarios vespertinos.', etiquetas: ['Regular'] },
+  { id: 'c12', nombre: 'Alejandro Morales Peña', telefono: '55 2468 1357', email: 'alex.morales@gmail.com', fechaNacimiento: '1994-10-15', puntosFidelidad: 30, totalVisitas: 1, ultimaVisita: '2026-04-01', notasInternas: 'Primera visita.', etiquetas: ['Nuevo'] },
+]
