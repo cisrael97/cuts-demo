@@ -10,7 +10,7 @@ export default function PersonalClient() {
   const activos = personalMock.filter((p) => p.activo)
 
   return (
-    <div className="flex-1 p-6 overflow-y-auto">
+    <div className="flex-1 p-3 md:p-6 overflow-y-auto">
       <div className="flex items-center justify-between mb-6">
         <p className="text-sm text-gray-500">{activos.length} empleados activos</p>
         <button className="flex items-center gap-2 bg-rose-500 text-white text-sm font-medium px-4 py-2 rounded-xl hover:bg-rose-600 transition-colors">

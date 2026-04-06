@@ -26,7 +26,7 @@ export default function ServiciosClient() {
   }
 
   return (
-    <div className="flex-1 p-6 overflow-y-auto">
+    <div className="flex-1 p-3 md:p-6 overflow-y-auto">
       {/* Toolbar */}
       <div className="flex items-center gap-3 mb-4">
         <div className="flex-1 flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2">

@@ -28,9 +28,9 @@ export default function ClientesClient() {
     : []
 
   return (
-    <div className="flex flex-1 overflow-hidden">
+    <div className="flex flex-col md:flex-row flex-1 md:overflow-hidden">
       {/* List */}
-      <div className="flex-1 flex flex-col p-6 overflow-hidden">
+      <div className="flex-1 flex flex-col p-3 md:p-6 md:overflow-hidden">
         {/* Filters */}
         <div className="flex items-center gap-3 mb-4">
           <div className="flex-1 flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2">

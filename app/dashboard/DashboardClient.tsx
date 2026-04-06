@@ -71,7 +71,7 @@ const STATS = [
 
 export default function DashboardClient() {
   return (
-    <div className="flex-1 p-6 space-y-6 overflow-y-auto">
+    <div className="flex-1 p-3 md:p-6 space-y-4 md:space-y-6 overflow-y-auto">
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {STATS.map(({ label, value, delta, Icon, bg, iconBg }) => (

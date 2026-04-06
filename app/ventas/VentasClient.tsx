@@ -65,9 +65,9 @@ export default function VentasClient() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+    <div className="flex flex-col flex-1 md:flex-row md:overflow-hidden">
       {/* Main area */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col md:overflow-hidden">
         {/* Tabs */}
         <div className="flex items-center gap-1 px-6 pt-4 pb-0 border-b border-gray-100 bg-white">
           {(['pos', 'historial'] as const).map((t) => (
@@ -82,7 +82,7 @@ export default function VentasClient() {
         </div>
 
         {tab === 'pos' ? (
-          <div className="flex-1 p-6 overflow-y-auto">
+          <div className="flex-1 p-3 md:p-6 overflow-y-auto">
             {/* Stats bar */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
               <div className="bg-white rounded-xl border border-gray-100 p-3 text-center">
@@ -141,7 +141,7 @@ export default function VentasClient() {
           </div>
         ) : (
           /* Historial */
-          <div className="flex-1 overflow-y-auto p-6">
+          <div className="flex-1 overflow-y-auto p-3 md:p-6">
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               <table className="w-full text-sm">
                 <thead>

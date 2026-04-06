@@ -1,41 +1,49 @@
 'use client'
 import { useState } from 'react'
 import Sidebar from './Sidebar'
+import { Menu } from 'lucide-react'
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <>
-      {/* Mobile overlay */}
+    <div className="min-h-screen bg-[#f8f9fb]">
+      {/* Backdrop mobile */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          className="fixed inset-0 bg-black/60 z-40 md:hidden"
           onClick={() => setOpen(false)}
         />
       )}
 
-      {/* Sidebar — always visible md+, drawer on mobile */}
-      <div className={`fixed inset-y-0 left-0 z-30 transition-transform duration-200 ${open ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
+      {/* Sidebar: hidden on mobile unless open, always visible on md+ */}
+      <div className={[
+        'fixed inset-y-0 left-0 z-50 md:block',
+        open ? 'block' : 'hidden',
+      ].join(' ')}>
         <Sidebar onClose={() => setOpen(false)} />
       </div>
 
-      {/* Main */}
-      <main className="flex-1 md:ml-60 min-h-screen flex flex-col">
-        {/* Mobile topbar trigger — passed via context-free approach: rendered in each page's Topbar */}
-        <div className="md:hidden fixed top-0 left-0 z-10 p-3">
+      {/* Main content */}
+      <div className="md:ml-60 flex flex-col min-h-screen">
+        {/* Mobile header bar */}
+        <div className="md:hidden flex items-center gap-3 px-4 py-3 bg-white border-b border-gray-100 sticky top-0 z-30">
           <button
             onClick={() => setOpen(true)}
-            className="w-9 h-9 bg-[#16213e] text-white rounded-xl flex flex-col items-center justify-center gap-1"
-            aria-label="Abrir menú"
+            className="w-9 h-9 bg-[#16213e] text-white rounded-xl flex flex-col items-center justify-center gap-1.5 flex-shrink-0"
           >
-            <span className="w-4 h-0.5 bg-white rounded" />
-            <span className="w-4 h-0.5 bg-white rounded" />
-            <span className="w-4 h-0.5 bg-white rounded" />
+            <Menu size={18} />
           </button>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-lg bg-rose-500 flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-[10px] font-bold">C</span>
+            </div>
+            <span className="font-bold text-gray-900 text-sm">Cuts & Style</span>
+          </div>
         </div>
+
         {children}
-      </main>
-    </>
+      </div>
+    </div>
   )
 }
