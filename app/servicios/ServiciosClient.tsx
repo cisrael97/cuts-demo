@@ -63,7 +63,7 @@ export default function ServiciosClient() {
       </div>
 
       {/* Cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-6">
         {filtered.map((s) => (
           <div key={s.id} className={clsx('bg-white rounded-2xl border shadow-sm overflow-hidden transition-all hover:shadow-md', !s.activo && 'opacity-50', s.activo ? 'border-gray-100' : 'border-dashed border-gray-200')}>
             {/* Color bar */}

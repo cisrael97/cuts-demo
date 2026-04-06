@@ -65,7 +65,7 @@ export default function VentasClient() {
   }
 
   return (
-    <div className="flex flex-1 overflow-hidden">
+    <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
       {/* Main area */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Tabs */}
@@ -84,7 +84,7 @@ export default function VentasClient() {
         {tab === 'pos' ? (
           <div className="flex-1 p-6 overflow-y-auto">
             {/* Stats bar */}
-            <div className="grid grid-cols-3 gap-4 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
               <div className="bg-white rounded-xl border border-gray-100 p-3 text-center">
                 <p className="text-xs text-gray-400 mb-0.5">Ingresos hoy</p>
                 <p className="font-bold text-gray-900">{formatCurrency(VENTAS_STATS.ingresosHoy + (success ? total : 0))}</p>
@@ -178,9 +178,9 @@ export default function VentasClient() {
         )}
       </div>
 
-      {/* Cart Sidebar */}
+      {/* Cart — full width on mobile, sidebar on desktop */}
       {tab === 'pos' && (
-        <div className="w-72 border-l border-gray-100 bg-white flex flex-col">
+        <div className="md:w-72 border-t md:border-t-0 md:border-l border-gray-100 bg-white flex flex-col max-h-[55vh] md:max-h-none">
           <div className="p-4 border-b border-gray-100">
             <div className="flex items-center gap-2 mb-3">
               <ShoppingCart size={16} className="text-rose-500" />

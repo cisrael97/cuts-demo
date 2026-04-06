@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Plus, ChevronLeft, ChevronRight, Clock, User } from 'lucide-react'
 import clsx from 'clsx'
 import { useCitasStore } from '@/lib/store/useCitasStore'
@@ -21,8 +21,20 @@ function dayLabel(dateStr: string) {
 export default function CitasClient() {
   const { citas, updateCita } = useCitasStore()
   const [baseDate, setBaseDate] = useState('2026-04-05')
-  const [view, setView] = useState<'semana' | 'lista'>('semana')
+  const [view, setView] = useState<'semana' | 'lista'>('lista')
   const [selectedCita, setSelectedCita] = useState<string | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => {
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      if (mobile) setView('lista')
+    }
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const weekDays = getWeekDays(baseDate)
 
@@ -45,7 +57,7 @@ export default function CitasClient() {
       <div className="flex-1 flex flex-col p-6 overflow-hidden">
         {/* Toolbar */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="flex items-center gap-1 bg-white border border-gray-200 rounded-xl p-1">
+          <div className="hidden md:flex items-center gap-1 bg-white border border-gray-200 rounded-xl p-1">
             <button onClick={() => setView('semana')} className={clsx('px-3 py-1.5 text-sm rounded-lg font-medium transition-all', view === 'semana' ? 'bg-rose-500 text-white' : 'text-gray-600 hover:bg-gray-50')}>Semana</button>
             <button onClick={() => setView('lista')} className={clsx('px-3 py-1.5 text-sm rounded-lg font-medium transition-all', view === 'lista' ? 'bg-rose-500 text-white' : 'text-gray-600 hover:bg-gray-50')}>Lista</button>
           </div>
@@ -158,8 +170,8 @@ export default function CitasClient() {
         )}
       </div>
 
-      {/* Detail Panel */}
-      {selected && (() => {
+      {/* Detail Panel — hidden on mobile */}
+      {selected && !isMobile && (() => {
         const cliente = clientesMock.find((c) => c.id === selected.clienteId)
         const servicio = serviciosMock.find((s) => s.id === selected.servicioId)
         const empleado = personalMock.find((p) => p.id === selected.personalId)

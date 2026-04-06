@@ -15,7 +15,7 @@ export default function Topbar({ title, subtitle }: TopbarProps) {
   }).format(now)
 
   return (
-    <header className="h-16 bg-white border-b border-gray-100 flex items-center px-6 gap-4">
+    <header className="h-16 bg-white border-b border-gray-100 flex items-center pl-14 pr-4 md:px-6 gap-4 sticky top-0 z-10">
       <div className="flex-1 min-w-0">
         <h1 className="text-lg font-bold text-gray-900 leading-tight">{title}</h1>
         {subtitle && <p className="text-xs text-gray-500">{subtitle}</p>}

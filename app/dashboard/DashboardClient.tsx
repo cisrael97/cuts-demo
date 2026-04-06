@@ -73,7 +73,7 @@ export default function DashboardClient() {
   return (
     <div className="flex-1 p-6 space-y-6 overflow-y-auto">
       {/* KPI Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {STATS.map(({ label, value, delta, Icon, bg, iconBg }) => (
           <div key={label} className={clsx('rounded-2xl p-5 border border-white shadow-sm', bg)}>
             <div className="flex items-start justify-between mb-3">
@@ -88,7 +88,7 @@ export default function DashboardClient() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Revenue Chart */}
         <div className="lg:col-span-2 bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-4">
@@ -133,7 +133,7 @@ export default function DashboardClient() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-6">
         {/* Citas de hoy */}
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-4">

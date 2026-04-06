@@ -68,8 +68,8 @@ export default function ClientesClient() {
         </div>
 
         {/* Table */}
-        <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-auto">
-          <table className="w-full text-sm">
+        <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-auto min-h-0">
+          <table className="w-full text-sm min-w-[480px]">
             <thead>
               <tr className="border-b border-gray-100">
                 <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500">Cliente</th>
@@ -124,9 +124,11 @@ export default function ClientesClient() {
         </div>
       </div>
 
-      {/* Detail */}
+      {/* Detail — slide-over on mobile, panel on desktop */}
       {selected && (
-        <div className="w-72 border-l border-gray-100 bg-white p-5 overflow-y-auto">
+        <>
+          <div className="fixed inset-0 bg-black/40 z-20 md:hidden" onClick={() => setSelected(null)} />
+          <div className="fixed inset-y-0 right-0 w-80 md:static md:w-72 md:border-l md:border-gray-100 bg-white p-5 overflow-y-auto z-30 shadow-xl md:shadow-none">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold text-gray-900">Perfil</h3>
             <button onClick={() => setSelected(null)} className="text-gray-400 hover:text-gray-600 text-lg">×</button>
@@ -184,7 +186,8 @@ export default function ClientesClient() {
               })}
             </div>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </div>
   )

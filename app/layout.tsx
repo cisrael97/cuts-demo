@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 import './globals.css'
-import Sidebar from '@/components/layout/Sidebar'
+import Shell from '@/components/layout/Shell'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 
@@ -14,10 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${geist.variable} h-full antialiased`}>
       <body className="h-full flex">
-        <Sidebar />
-        <main className="flex-1 ml-60 min-h-screen flex flex-col">
-          {children}
-        </main>
+        <Shell>{children}</Shell>
       </body>
     </html>
   )
