@@ -29,26 +29,26 @@
 
 /* ── Tema Barbería ────────────────────────────────── */
 :root.barberia {
-  --bg:            #0e0c08;
-  --card:          #1a1910;
-  --card-alt:      #141308;
-  --card-border:   #2e2b1c;
-  --input-bg:      #22200f;
-  --row-hover:     #211f12;
+  --bg:            #000000;
+  --card:          #0d0d0d;
+  --card-alt:      #080808;
+  --card-border:   #1e1e1e;
+  --input-bg:      #141414;
+  --row-hover:     #161616;
 
-  --sidebar-bg:    #080703;
-  --sidebar-text:  rgba(255,255,255,0.55);
-  --sidebar-hover: rgba(184,160,120,0.12);
-  --sidebar-logo:  #b8a078;
+  --sidebar-bg:    #000000;
+  --sidebar-text:  rgba(242,244,241,0.5);
+  --sidebar-hover: rgba(213,208,170,0.08);
+  --sidebar-logo:  #D5D0AA;
 
-  --accent:        #b8a078;
-  --accent-hover:  #a08c64;
-  --accent-light:  rgba(184,160,120,0.15);
-  --accent-text:   #c4ae90;
+  --accent:        #D5D0AA;
+  --accent-hover:  #c4bf98;
+  --accent-light:  rgba(213,208,170,0.12);
+  --accent-text:   #D5D0AA;
 
-  --text:          #f0e8d0;
-  --text-muted:    #8a7850;
-  --text-faint:    #4a4028;
+  --text:          #F2F4F1;
+  --text-muted:    #687073;
+  --text-faint:    #3a3e40;
 }
 
 @theme inline {
